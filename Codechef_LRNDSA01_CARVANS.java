@@ -15,11 +15,12 @@ class Codechef_LRNDSA01_CARVANS
         while(t-->0)
         {
         	int  n = sc.nextInt();
-        	int max = Integer.MAX_VALUE;
-        	int count = 0;
+        	long max = sc.nextInt();
+        	n--;
+        	int count = 1;
         	while(n-->0)
             {
-        		int currSpeed = sc.nextInt();
+        		long currSpeed = sc.nextInt();
         		if(currSpeed<max) {
         			max = currSpeed;
         			count++;
@@ -29,40 +30,6 @@ class Codechef_LRNDSA01_CARVANS
         }
 	out.close();
     }
-    public static void solve(int i)
-    {
-    	
-    }
-    
-    private static boolean isLapindrome(String lapInp) {
-		
-    	int len = lapInp.length();
-    	
-    	HashMap<Character, Integer> frqMap = new HashMap<Character, Integer>();
-    	for(int i =0,j=len-1; i<j;i++,j--) {
-    		char left = lapInp.charAt(i);
-    		char right = lapInp.charAt(j);
-    		if(frqMap.containsKey(left)) {
-    			frqMap.put(left, frqMap.get(left)+1);
-    		}else {
-    			frqMap.put(left,1);
-    		}
-
-    		if(frqMap.containsKey(right)) {
-    			frqMap.put(right, frqMap.get(right)-1);
-    		}else {
-    			frqMap.put(right,-1);
-    		}
-    	}
-
-    	for(int value: frqMap.values()) {
-    		if(value!=0) {
-    			return false;
-    		}
-    	}
-    	
-		return true;
-	}
 
 	static class Reader 
     { 
